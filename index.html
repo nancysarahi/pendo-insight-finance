@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pendo-insight-finance</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>SecureBank - Digital Banking Platform</title>
+    <meta name="description" content="Modern digital banking with Pendo analytics integration" />
+    <meta name="author" content="SecureBank" />
 
-    <meta property="og:title" content="pendo-insight-finance" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="SecureBank - Digital Banking Platform" />
+    <meta property="og:description" content="Modern digital banking with Pendo analytics integration" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -20,5 +20,36 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Pendo Analytics Integration -->
+    <script>
+    (function(apiKey){
+        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+        v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+            o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+            y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+            z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+            // Initialize Pendo with demo user data
+            pendo.initialize({
+                visitor: {
+                    id: 'demo-user-123',
+                    email: 'demo@securebank.com',
+                    full_name: 'Demo User',
+                    role: 'customer'
+                },
+
+                account: {
+                    id: 'securebank-demo',
+                    name: 'SecureBank Demo',
+                    is_paying: true,
+                    monthly_value: 150,
+                    planLevel: 'premium',
+                    planPrice: 150,
+                    creationDate: '2024-01-15'
+                }
+            });
+    })('e66400c1-6008-4439-85f9-74f1fb03db9f');
+    </script>
   </body>
 </html>
